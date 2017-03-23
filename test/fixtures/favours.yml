@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  juan_id: 1
+  runner_id: 1
+  description: MyString
+  price: 9.99
+  is_available: false
+  time_availfrom: 2017-03-19 01:03:41
+  time_availto: 2017-03-19 01:03:41
+
+two:
+  juan_id: 1
+  runner_id: 1
+  description: MyString
+  price: 9.99
+  is_available: false
+  time_availfrom: 2017-03-19 01:03:41
+  time_availto: 2017-03-19 01:03:41

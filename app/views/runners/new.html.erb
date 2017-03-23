@@ -1,0 +1,14 @@
+<%= form_for(@runner) do |f| %>
+	
+	<h3> User Credentials: </h3>
+	<%= f.label :username %> <%= f.text_field :username %> <br>
+	<%= f.label :password %> <%= f.password_field :password %> <br>
+	<h3> User Information: </h3>
+	<%= f.label :fname %> <%= f.text_field :fname %> <br>
+	<%= f.label :lname %> <%= f.text_field :lname %> <br>
+	<%= f.label :skill %> <%= f.select :skill, [['Cleaning',1],['Cooking',2]] %> <br>
+	<%= f.submit "Register" %>
+	
+	
+	
+<% end %>

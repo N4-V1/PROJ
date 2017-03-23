@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fname: MyString
+  lname: MyString
+  skill: 1
+  time_availfrom: 2017-03-19 00:59:32
+  time_availto: 2017-03-19 00:59:32
+  description: MyString
+
+two:
+  fname: MyString
+  lname: MyString
+  skill: 1
+  time_availfrom: 2017-03-19 00:59:32
+  time_availto: 2017-03-19 00:59:32
+  description: MyString

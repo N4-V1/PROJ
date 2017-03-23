@@ -1,0 +1,11 @@
+<% if flash[:alert] %>
+	<div class="alert"> <%= flash[:alert] %> </div>
+<% end %>
+<%= form_for(:session, url: '/index') do |f| %>
+    <%= f.label :username %> <%= f.text_field :username %> <br>
+	<%= f.label :password %> <%= f.password_field :password %> <br>
+	<%= f.submit "Login" %>
+<% end %>
+
+<a href="/juans/new"> Sign Up as Juan </a> <br>
+<a href="#"> Sign Up as Runner </a>
