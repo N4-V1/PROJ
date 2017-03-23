@@ -6044,3 +6044,2529 @@ Processing by RunnersController#index as HTML
 Completed 200 OK in 22ms (Views: 15.7ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPayToFavor (20170323130126)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "favors" ADD "pay" integer[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170323130126"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/runners" for ::1 at 2017-03-23 21:02:18 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RunnersController#index as HTML
+  [1m[36mJuan Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 84ms (Views: 28.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:02:32 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:02:39 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wRIR0UcZtSbmqfi8Fy3rhWiC3SJdFFnYUTBqj/2DrKOBqTsajHReIg7HNHlGn+EPqWnwBc2bLtddjlck6C/J4w==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:02:39 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 21:02:52 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 23ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 21:04:56 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 39ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 21:06:52 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juan" for ::1 at 2017-03-23 21:07:02 +0800
+Processing by FavorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yRDkljpN8q2em0WNf4zJz7G3G0GzPo5IVFuSNnCrxPD8q4b41HMgl+iFv6k4nv/ttVlaB/bDWzoxdHGQoCX5Zg==", "favor"=>{"desc"=>"Help", "skill"=>"Cleaning", "pay"=>"200"}, "commit"=>"Ask Favor"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    10:     <thead>
+    11:         <th><a href="/juans">Available Runners</a></th>
+    12: 		<th><a href="/favors/new">Ask a Favor</a></th>
+    13: 		<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
+    14: 		
+    15:     </thead>
+    16: </table>
+  
+app/views/favors/new.html.erb:13:in `block in _app_views_favors_new_html_erb__506376673_45475644'
+app/views/favors/new.html.erb:1:in `_app_views_favors_new_html_erb__506376673_45475644'
+app/controllers/favors_controller.rb:17:in `create'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (420.0ms)
+Started GET "/login" for ::1 at 2017-03-23 21:08:51 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:08:58 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C1N05uR3UmIat+bAW8sR++7DLaoVMUCd8l2N980X74RL6F4tLxq5ZvLZKgUKeRtxLygAjYW+N5L+47Bc2LuKxA==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 21ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:08:58 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 26ms (Views: 18.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:09:03 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 31ms (Views: 23.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/7/edit" for ::1 at 2017-03-23 21:09:07 +0800
+Processing by FavorsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering favors/edit.html.erb within layouts/application
+  Rendered favors/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/7/edit" for ::1 at 2017-03-23 21:09:39 +0800
+Processing by FavorsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering favors/edit.html.erb within layouts/application
+  Rendered favors/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/favors/7" for ::1 at 2017-03-23 21:09:41 +0800
+Processing by FavorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QEP0ECtTT0Vn2eCUl/B6gscMi9/+eEdD5rDdzvw4GV9pDMw7uEEyd6pimCw5xZXiAysmDfhRK60exSRTMu3b6A==", "favor"=>{"desc"=>"Help cleaning", "skill"=>"Cleaning", "pay"=>"200"}, "commit"=>"Update Favor", "id"=>"7"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "favors" SET "pay" = ?, "updated_at" = ? WHERE "favors"."id" = ?[0m  [["pay", 200], ["updated_at", 2017-03-23 13:09:41 UTC], ["id", 7]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:09:41 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:09:43 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:10:15 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:10:18 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:10:22 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f1qMRrZzgAnzikMdtI2qrn5NlHXQmsq36WgJqYe/ymE/4aaNfR5rDRvkj9jlP6Akv6a5UkAVvbjl1jQCkhOvIQ==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:10:22 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:11:07 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:11:15 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:11:56 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:12:02 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t6WYAIME0L1dsfPyAvb6oOov20ms9k5oc87NsID1fEP3HrLLSGk7ubXfPzdTRPAqK8T2bjx5OWd/cPAblVkZAw==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:12:02 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 21:12:05 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juan" for ::1 at 2017-03-23 21:12:20 +0800
+Processing by FavorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7UOXF7T3mzmj8Eb8XQuByaEglh1DfbRWIQZxPVHeB+3Y+PV5WslJA9XuvNgaGbfrpc7XWwaAYSREKZKbgVA6ew==", "favor"=>{"desc"=>"Need help", "skill"=>"Cleaning", "pay"=>"150"}, "commit"=>"Ask Favor"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "favors" ("desc", "juan_id", "created_at", "updated_at", "skill", "pay") VALUES (?, ?, ?, ?, ?, ?)[0m  [["desc", "Need help"], ["juan_id", 1], ["created_at", 2017-03-23 13:12:20 UTC], ["updated_at", 2017-03-23 13:12:20 UTC], ["skill", "Cleaning"], ["pay", 150]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:12:20 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:12:21 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/8/delete" for ::1 at 2017-03-23 21:12:28 +0800
+Processing by FavorsController#delete as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "favors" WHERE "favors"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:12:28 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:12:29 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:12:31 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:12:34 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ma6cbjPiSP5FaQKv/ftEivYNYoYrJKZ4vhgDXd48NPVxFbal+I+j+q0HzmqsSU4AN+ZPobur0Xeypj72y5BRtQ==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 2ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:12:34 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:12:41 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  Rendered runners/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:13:57 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/show.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `juan_id' for #<Favor::ActiveRecord_Relation:0x4332528>):
+    18: 	<p>Contact: <%= @runners.contact %></p>
+    19: 	<p>Skill: <%= @runners.skill %> </p>
+    20: 	<% @favor = Favor.where("skill = ?", @runners.skill) %>
+    21: 	<% @juan = Juan.find_by("id = ?", @favor.juan_id) %>
+    22:         Juan: <a href="/juans/<%= @juan.id %>"><%= @juan.fname %> <%= @juan.lname %></a><br>
+    23:         Minimum Pay: <%= @favor.pay %><br>
+    24: 		Description: <%= @favor.desc %><br>
+  
+app/views/runners/show.html.erb:21:in `_app_views_runners_show_html_erb___639360442_35453220'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (412.0ms)
+Started GET "/runners/1" for ::1 at 2017-03-23 21:14:16 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `pay' for #<Favor::ActiveRecord_Relation:0x3d494f0>):
+    20: 	<% @favor = Favor.where("skill = ?", @runners.skill) %>
+    21: 	<% @juan = Juan.find_by("id = ?", @favor.first.juan_id) %>
+    22:         Juan: <a href="/juans/<%= @juan.id %>"><%= @juan.fname %> <%= @juan.lname %></a><br>
+    23:         Minimum Pay: <%= @favor.pay %><br>
+    24: 		Description: <%= @favor.desc %><br>
+    25: 	<p>Availability: <% if @runners.isAvailable %>
+    26: 						Yes </p>
+  
+app/views/runners/show.html.erb:23:in `_app_views_runners_show_html_erb___639360442_32351460'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (423.0ms)
+Started GET "/runners/1" for ::1 at 2017-03-23 21:14:46 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:15:07 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:15:42 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:16:34 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:17:00 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `address' for #<Favor:0x5195b38>):
+    23:         Juan: <%= @juan.fname %> <%= @juan.lname %></a><br>
+    24:         Minimum Pay: <%= @favor.first.pay %><br>
+    25: 		Description: <%= @favor.first.desc %><br>
+    26: 		Location: <%= @favor.first.address %><br>
+    27: 	<p>Availability: <% if @runners.isAvailable %>
+    28: 						Yes </p>
+    29: 					 <% else %>
+  
+app/views/runners/show.html.erb:26:in `_app_views_runners_show_html_erb___639360442_43045056'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (385.0ms)
+Started GET "/runners/1" for ::1 at 2017-03-23 21:17:10 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `first' for #<Juan:0x4d865c0>):
+    23:         Juan: <%= @juan.fname %> <%= @juan.lname %></a><br>
+    24:         Minimum Pay: <%= @favor.first.pay %><br>
+    25: 		Description: <%= @favor.first.desc %><br>
+    26: 		Location: <%= @juan.first.address %><br>
+    27: 	<p>Availability: <% if @runners.isAvailable %>
+    28: 						Yes </p>
+    29: 					 <% else %>
+  
+app/views/runners/show.html.erb:26:in `_app_views_runners_show_html_erb___639360442_40740900'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (421.0ms)
+Started GET "/runners/1" for ::1 at 2017-03-23 21:17:17 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 14.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:17:27 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:17:53 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `address' for #<Favor:0x3d7dcf0>):
+    20:         Juan:<%= @juan.fname %> <%= @juan.lname %><br>
+    21:         Minimum Pay: <%= f.pay %><br>
+    22: 		Description: <%= f.desc %><br>
+    23: 		Location: <%= f.address %><br>
+    24: 		<a href="/runners/<%= f.id %>">Accept</a><br><br>
+    25: 	</div>
+    26: <% end %>
+  
+app/views/runners/index.html.erb:23:in `block in _app_views_runners_index_html_erb___990969410_32478960'
+app/views/runners/index.html.erb:17:in `_app_views_runners_index_html_erb___990969410_32478960'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (413.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:18:03 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/7" for ::1 at 2017-03-23 21:18:41 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Runner with 'id'=7):
+  
+app/controllers/runners_controller.rb:29:in `show'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (414.0ms)
+Started GET "/runners/7" for ::1 at 2017-03-23 21:18:59 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Runner with 'id'=7):
+  
+app/controllers/runners_controller.rb:29:in `show'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (417.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:19:02 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/7" for ::1 at 2017-03-23 21:19:03 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/favors/7"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [26 times] (4.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (552.0ms)
+Started GET "/runners/1" for ::1 at 2017-03-23 21:20:45 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners/1/edit" for ::1 at 2017-03-23 21:20:47 +0800
+Processing by RunnersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/edit.html.erb within layouts/application
+  Rendered runners/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 23ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/runners/1" for ::1 at 2017-03-23 21:20:49 +0800
+Processing by RunnersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/5cylvCX215TkvmQ7nLZJ7U1QQQQuRzUVTpLrL3lpVgzjWkMolm0EGjGYkuUb41Z2ogl7ZhlNtQfYDWLV937aw==", "runner"=>{"fname"=>"Runner", "lname"=>"Runner", "address"=>"Naga City", "contact"=>"09123456789", "skill"=>"Cleaning", "isAvailable"=>"false"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRunner Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "runners" WHERE "runners"."username" = ? AND ("runners"."id" != ?) LIMIT ?[0m  [["username", "Runner"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "runners" SET "isAvailable" = ?, "updated_at" = ? WHERE "runners"."id" = ?[0m  [["isAvailable", false], ["updated_at", 2017-03-23 13:20:49 UTC], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:20:49 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 14.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:20:52 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:20:57 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4n8xYa6EpA/AH7DDRNqjEHr4YlVIBkw0Yo8SitaNcXeixBuqZelPCyhxfAYVaKmauxNPctiJOztuMS8hwyEUNw==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:20:57 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:22:36 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:22:44 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cd/kVSkrntHh6YpoiruBOGqT8dKwDlEzr+5x1D/jp4FJZM6e4kZ11QmHRq3bCYuyq3jc9SCBJjyjUEx/Kk/CwQ==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:22:44 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning') AND (runner_id = NULL)[0m
+  Rendered runners/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:23:43 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:23:51 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:24:24 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning') AND (runner_id != NULL)[0m
+  Rendered runners/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:24:41 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning') AND (runner_id = NULL)[0m
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:24:50 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:33:28 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 52ms (Views: 22.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:33:29 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:33:36 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:34:14 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 54ms (Views: 26.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/1" for ::1 at 2017-03-23 21:34:15 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/favors/1"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (4.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (546.0ms)
+Started GET "/login" for ::1 at 2017-03-23 21:34:28 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:34:36 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qm2G10SZg1HYAHUoP8b+rY2mFY7dyCyxqbeZnAQIN17q1qwcj/RoVTBuue1udPQnTE04qU1HW76lCaQ3EaRSHg==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:34:36 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:37:39 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  Rendered runners/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (c:/Sites/JuanRun/app/views/runners/index.html.erb:21: syntax error, unexpected '<', expecting keyword_end
+	<% @juan = Juan.find_by("id = ?", f.juan_id) 
+	 ^
+c:/Sites/JuanRun/app/views/runners/index.html.erb:21: syntax error, unexpected '=', expecting keyword_end
+	<% @juan = Juan.find_by("id = ?", f.juan_id) 
+	          ^):
+  
+app/views/runners/index.html.erb:21: syntax error, unexpected '<', expecting keyword_end
+app/views/runners/index.html.erb:21: syntax error, unexpected '=', expecting keyword_end
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (398.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:38:06 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  Rendered runners/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (c:/Sites/JuanRun/app/views/runners/index.html.erb:22: syntax error, unexpected tOP_ASGN, expecting keyword_end
+        Juan:<%= @juan.fname ;@output_buffer....
+                ^):
+  
+app/views/runners/index.html.erb:22: syntax error, unexpected tOP_ASGN, expecting keyword_end
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (417.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:38:18 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Missing block):
+    18: 	<div>
+    19: 	<% if f.runner_id == nil %>
+    20: 	<% @juan = Juan.find_by("id = ?", f.juan_id) %>
+    21: 	<% form_for(f, :url=>{:action => 'accept'}) %>
+    22:         Juan:<%= @juan.fname %> <%= @juan.lname %><br>
+    23:         Minimum Pay: <%= f.pay %><br>
+    24: 		Description: <%= f.desc %><br>
+  
+app/views/runners/index.html.erb:21:in `block in _app_views_runners_index_html_erb___990969410_39674664'
+app/views/runners/index.html.erb:17:in `_app_views_runners_index_html_erb___990969410_39674664'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (414.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:38:49 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing block):
+    18: 	<div>
+    19: 	<% if f.runner_id == nil %>
+    20: 	<% @juan = Juan.find_by("id = ?", f.juan_id) %>
+    21: 	<% form_for(@runner, :url=>{:action => 'accept'}) %>
+    22:         Juan:<%= @juan.fname %> <%= @juan.lname %><br>
+    23:         Minimum Pay: <%= f.pay %><br>
+    24: 		Description: <%= f.desc %><br>
+  
+app/views/runners/index.html.erb:21:in `block in _app_views_runners_index_html_erb___990969410_45673224'
+app/views/runners/index.html.erb:17:in `_app_views_runners_index_html_erb___990969410_45673224'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (430.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:39:30 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  Rendered runners/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (c:/Sites/JuanRun/app/views/runners/index.html.erb:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+c:/Sites/JuanRun/app/views/runners/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/runners/index.html.erb:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/runners/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (421.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:40:01 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    18: 	<div>
+    19: 	<% if f.runner_id == nil %>
+    20: 	<% @juan = Juan.find_by("id = ?", f.juan_id) %>
+    21: 	<% form_for(@runner, :url=>{:action => 'accept'}) do %>
+    22:         Juan:<%= @juan.fname %> <%= @juan.lname %><br>
+    23:         Minimum Pay: <%= f.pay %><br>
+    24: 		Description: <%= f.desc %><br>
+  
+app/views/runners/index.html.erb:21:in `block in _app_views_runners_index_html_erb___990969410_33781416'
+app/views/runners/index.html.erb:17:in `_app_views_runners_index_html_erb___990969410_33781416'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (415.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:40:38 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for #<Favor:0x544df58>):
+    23:         Minimum Pay: <%= f.pay %><br>
+    24: 		Description: <%= f.desc %><br>
+    25: 		Location: <%= @juan.address %><br>
+    26: 		<%= f.submit "Accept" %><br><br>
+    27: 	</div>
+    28: 	<% end %>
+    29: 	<% end %>
+  
+app/views/runners/index.html.erb:26:in `block (2 levels) in _app_views_runners_index_html_erb___990969410_44247636'
+app/views/runners/index.html.erb:21:in `block in _app_views_runners_index_html_erb___990969410_44247636'
+app/views/runners/index.html.erb:17:in `_app_views_runners_index_html_erb___990969410_44247636'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (415.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:41:00 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:41:10 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:42:47 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/7/delete" for ::1 at 2017-03-23 21:42:48 +0800
+Processing by FavorsController#delete as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "favors" WHERE "favors"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:42:48 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 23ms (Views: 14.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:42:50 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:42:52 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:42:58 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 21:43:02 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juan" for ::1 at 2017-03-23 21:43:08 +0800
+Processing by FavorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Jt/YRLX/2iJqQ0vFtiTEiYrGboe03QoJOZJqQCpmqvdIB0P/OktUv+39wtRyqUwIsVY/FsuoVpByaoP0CenPQ==", "favor"=>{"desc"=>"Help", "skill"=>"Cleaning", "pay"=>"200"}, "commit"=>"Ask Favor"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "favors" ("desc", "juan_id", "created_at", "updated_at", "skill", "pay") VALUES (?, ?, ?, ?, ?, ?)[0m  [["desc", "Help"], ["juan_id", 1], ["created_at", 2017-03-23 13:43:08 UTC], ["updated_at", 2017-03-23 13:43:08 UTC], ["skill", "Cleaning"], ["pay", 200]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:43:08 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:43:09 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:43:14 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:43:23 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9N+kHMQKvIPwM9ZSEUM0mn9E1m8k4qp/D4teBabtndi0ZI7XD2dXhxhdGpdA8T4Qvq/7SLRt3XADNWOus0H4mA==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:43:23 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:43:27 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 14.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/9/delete" for ::1 at 2017-03-23 21:43:33 +0800
+Processing by FavorsController#delete as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "favors" WHERE "favors"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:43:33 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:43:35 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 13.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:43:36 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:43:41 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pgL6S+9VSe0OcAEj7cho5ZZkNzkwnPlEFOhIGKKhNA3mudCAJDii6eYezea8emJvV48aHqATjksYVnWztw1RTQ==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:43:41 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:43:43 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `juan_id' for nil:NilClass):
+    19: 	<p>Skill: <%= @runners.skill %> </p>
+    20: 	<h4> Favor Currently Doing </h4>
+    21: 	<% @favor = Favor.where("skill = ?", @runners.skill) %>
+    22: 	<% @juan = Juan.find_by("id = ?", @favor.first.juan_id) %>
+    23:         Juan: <%= @juan.fname %> <%= @juan.lname %></a><br>
+    24:         Minimum Pay: <%= @favor.first.pay %><br>
+    25: 		Description: <%= @favor.first.desc %><br>
+  
+app/views/runners/show.html.erb:22:in `_app_views_runners_show_html_erb___639360442_34429668'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (409.0ms)
+Started GET "/login" for ::1 at 2017-03-23 21:43:51 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:43:54 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y0/lAS3txTbXZn2pt+c5cMw+UWSLVn5fLoiIcCOiSAaL9M/K5oAuMj8IsWzmVTP6DdV8QxvZCVAiNrXbNg4tRg==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:43:54 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:43:55 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `juan_id' for nil:NilClass):
+    19: 	<p>Skill: <%= @runners.skill %> </p>
+    20: 	<h4> Favor Currently Doing </h4>
+    21: 	<% @favor = Favor.where("skill = ?", @runners.skill) %>
+    22: 	<% @juan = Juan.find_by("id = ?", @favor.first.juan_id) %>
+    23:         Juan: <%= @juan.fname %> <%= @juan.lname %></a><br>
+    24:         Minimum Pay: <%= @favor.first.pay %><br>
+    25: 		Description: <%= @favor.first.desc %><br>
+  
+app/views/runners/show.html.erb:22:in `_app_views_runners_show_html_erb___639360442_45048432'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (409.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:44:04 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:44:31 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:44:36 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:44:44 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:46:26 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:46:28 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/new" for ::1 at 2017-03-23 21:46:29 +0800
+Processing by JuansController#new as HTML
+  Rendering juans/new.html.erb within layouts/application
+  Rendered juans/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:46:35 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Csqm5XQ70RwcqYsq3UbRAYaVpkLZM5Mz2KGE0FcUCiwkABQXr0EQJgcaun6xxHOx/F7vpvruUPD3Lu4VPA1aA==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:46:35 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:46:40 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 21:46:41 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juan" for ::1 at 2017-03-23 21:46:47 +0800
+Processing by FavorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eTjcQ1D7rxHpcfyAL8XbVcifyUzq1GFaNVlTZ9Ft88NMg74tvsV9K59vBqRo1+13zHGICq8ptChQdrDBAePOVQ==", "favor"=>{"desc"=>"Help", "skill"=>"Cleaning", "pay"=>"200"}, "commit"=>"Ask Favor"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "favors" ("desc", "juan_id", "created_at", "updated_at", "skill", "pay") VALUES (?, ?, ?, ?, ?, ?)[0m  [["desc", "Help"], ["juan_id", 1], ["created_at", 2017-03-23 13:46:47 UTC], ["updated_at", 2017-03-23 13:46:47 UTC], ["skill", "Cleaning"], ["pay", 200]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:46:47 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:46:48 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:46:50 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:46:53 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bbo82ZpRwyJ+IGKzIPQQsMTFFD/dypBW9p4C0UMDgz5FARYSUTwoJpZOrnZxRho6BS45GE1F51n6ID96Vq/mfg==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:46:53 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/runners" for ::1 at 2017-03-23 21:47:02 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PwQwsM84yzmLgm4syfwh6rj0d+aJzV6HKzN2yZfxEkCG+aeB3tFsLy9Ek016m3nEQw0zjzOE0Q+bfZ8E6Rr2aQ==", "commit"=>"Accept"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Favor with 'id'=):
+  
+app/controllers/runners_controller.rb:65:in `accept'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (391.0ms)
+Started GET "/login" for ::1 at 2017-03-23 21:49:52 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:50:00 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"shMILEw/I8Ia5Jp8vkogNfbzx/OBoxK4CSF4aqstEv/yqCLnh1LIxvKKVrnv+Cq/Nxjq1BEsZbcFn0XBvoF3vw==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:50:00 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 21:50:05 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:50:06 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/10/edit" for ::1 at 2017-03-23 21:50:07 +0800
+Processing by FavorsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering favors/edit.html.erb within layouts/application
+  Rendered favors/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/favors/10" for ::1 at 2017-03-23 21:50:10 +0800
+Processing by FavorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XdX9bJ4bl6rKAscBSeSQjQgRytcuGpq9kzr/pz01v/X6x0lgc7iFSE9VP8/rhpuOMFVlwAa9kj1Lu+xLIgMt6w==", "favor"=>{"desc"=>"Help", "skill"=>"Cleaning", "pay"=>"aaaa"}, "commit"=>"Update Favor", "id"=>"10"}
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    10:     <thead>
+    11:         <th><a href="/juans">Available Runners</a></th>
+    12: 		<th><a href="/favors/new">Ask a Favor</a></th>
+    13: 		<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
+    14: 		
+    15:     </thead>
+    16: </table>
+  
+app/views/favors/new.html.erb:13:in `block in _app_views_favors_new_html_erb__506376673_26587884'
+app/views/favors/new.html.erb:1:in `_app_views_favors_new_html_erb__506376673_26587884'
+app/controllers/favors_controller.rb:35:in `update'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (411.0ms)
+Started PATCH "/favors/10" for ::1 at 2017-03-23 21:50:19 +0800
+Processing by FavorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XdX9bJ4bl6rKAscBSeSQjQgRytcuGpq9kzr/pz01v/X6x0lgc7iFSE9VP8/rhpuOMFVlwAa9kj1Lu+xLIgMt6w==", "favor"=>{"desc"=>"Help", "skill"=>"Cleaning", "pay"=>"200"}, "commit"=>"Update Favor", "id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:50:19 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:50:23 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/10/edit" for ::1 at 2017-03-23 21:50:24 +0800
+Processing by FavorsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering favors/edit.html.erb within layouts/application
+  Rendered favors/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/favors/10" for ::1 at 2017-03-23 21:50:26 +0800
+Processing by FavorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yj9FngRnLGX1UWQcZUJvYLXzoowfMZcBBWwzFeAIwh9tLfGS6cQ+h3AGnNLHIGRjjbcNmzeWn4Hd7SD5/z5QAQ==", "favor"=>{"desc"=>"Help", "skill"=>"Cleaning", "pay"=>"aa"}, "commit"=>"Update Favor", "id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    10:     <thead>
+    11:         <th><a href="/juans">Available Runners</a></th>
+    12: 		<th><a href="/favors/new">Ask a Favor</a></th>
+    13: 		<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
+    14: 		
+    15:     </thead>
+    16: </table>
+  
+app/views/favors/new.html.erb:13:in `block in _app_views_favors_new_html_erb__506376673_43405164'
+app/views/favors/new.html.erb:1:in `_app_views_favors_new_html_erb__506376673_43405164'
+app/controllers/favors_controller.rb:35:in `update'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (388.0ms)
+Started PATCH "/favors/10" for ::1 at 2017-03-23 21:50:37 +0800
+Processing by FavorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yj9FngRnLGX1UWQcZUJvYLXzoowfMZcBBWwzFeAIwh9tLfGS6cQ+h3AGnNLHIGRjjbcNmzeWn4Hd7SD5/z5QAQ==", "favor"=>{"desc"=>"Help", "skill"=>"Cleaning", "pay"=>"200"}, "commit"=>"Update Favor", "id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:50:37 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:50:45 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:50:50 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FGOPYJHPBj3qJDh6oVllARh44Zd6TRlw/7uG+WOzXUZU2KWrWqLtOQJK9L/w62+L2ZPMsOrCbn/zBbtSdh84Bg==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 2ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:50:50 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/runners" for ::1 at 2017-03-23 21:51:22 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sFrde0ZaQsLnTtm4D2Owqm5tk2JMqmQRRe5HvNbt0dUJp0pKV7Pl1EOIJNm8BOiElZTXC/bj65n1oK5xqAY1/A==", "commit"=>"Accept"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Favor with 'id'=):
+  
+app/controllers/runners_controller.rb:65:in `accept'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (412.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:53:53 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    18: 	<div>
+    19: 	<% if f.runner_id == nil %>
+    20: 	<% @juan = Juan.find_by("id = ?", f.juan_id) %>
+    21: 	<%= form_for(@runner, :url=>{:action => 'accept'}) do |x| %>
+    22:         Juan:<%= @juan.fname %> <%= @juan.lname %><br>
+    23:         Minimum Pay: <%= f.pay %><br>
+    24: 		Description: <%= f.desc %><br>
+  
+app/views/runners/index.html.erb:21:in `block in _app_views_runners_index_html_erb___990969410_77310912'
+app/views/runners/index.html.erb:17:in `_app_views_runners_index_html_erb___990969410_77310912'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (411.0ms)
+Started GET "/login" for ::1 at 2017-03-23 21:54:33 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:54:38 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o4DL3Ebxn6/AvwhgzJSvqyZslw09JKERhjwF16fkvqvjO+EXjZx0qyjRxKWdJqUh54e6Kq2r1h6Kgjh8skjb6w==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 2ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:54:38 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 21:54:39 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juan" for ::1 at 2017-03-23 21:54:49 +0800
+Processing by FavorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qV8mljlljy3ExPjkO82nTJ6Nei1tZzn2OdqfPzKFuqac5ET411tdF7LaAsB835FummM7ayia7IRc9XyZ4guHMA==", "favor"=>{"desc"=>"Help with cleaning", "skill"=>"Cleaning", "pay"=>"250"}, "commit"=>"Ask Favor"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "favors" ("desc", "juan_id", "created_at", "updated_at", "skill", "pay") VALUES (?, ?, ?, ?, ?, ?)[0m  [["desc", "Help with cleaning"], ["juan_id", 1], ["created_at", 2017-03-23 13:54:49 UTC], ["updated_at", 2017-03-23 13:54:49 UTC], ["skill", "Cleaning"], ["pay", 250]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:54:49 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 21:54:52 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:54:54 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:54:59 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bBTLJQGywomo4qb57lfLY6i5qejDnR5G5z4VTSLvXDQsr+Huyt8pjUCMajy/5cHpaVKEz1MSaUnrgCjmN0M5dA==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:54:59 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 23ms (Views: 15.7ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/runners" for ::1 at 2017-03-23 21:55:07 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Od09l5VIdNy1wB8lW9Ng3mGppALyl1sCpwY2IOW9rPeAIKqmhKHTyhEG4kTotDjwmlDga0je1IoXSN/tm1ZI3g==", "commit"=>"Accept"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Favor with 'id'=):
+  
+app/controllers/runners_controller.rb:65:in `accept'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (385.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 21:58:23 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/runners?id=11" for ::1 at 2017-03-23 21:58:24 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pv0c9R8O/FrGtzf6Nyj3ytaviViYmxAegN01g6oMGL2HAIvEDudbTGJxypuET6/kLVbNMSLSn5Ywk9xO1Of8lA==", "commit"=>"Accept", "id"=>"11"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for RunnersController#accept, rendering head :no_content
+Completed 204 No Content in 236ms (ActiveRecord: 0.0ms)
+
+
+Started PATCH "/runners?id=11" for ::1 at 2017-03-23 21:58:27 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pv0c9R8O/FrGtzf6Nyj3ytaviViYmxAegN01g6oMGL2HAIvEDudbTGJxypuET6/kLVbNMSLSn5Ywk9xO1Of8lA==", "commit"=>"Accept", "id"=>"11"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for RunnersController#accept, rendering head :no_content
+Completed 204 No Content in 219ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:58:34 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 22ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/runners?id=11" for ::1 at 2017-03-23 21:58:35 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PTpmiEG0zZVZg6S+hZYnlyDyIMoAlUNzyx3pc79KNeKEx/G5UF1qg/1FWd828X+52wtko7rczPt7UwC+waHRyw==", "commit"=>"Accept", "id"=>"11"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for RunnersController#accept, rendering head :no_content
+Completed 204 No Content in 233ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:58:45 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:58:53 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 26ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:59:15 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 24ms (Views: 17.4ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/runners?id=10" for ::1 at 2017-03-23 21:59:16 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SWbbNOKXoUw+q8CFC7C9tg96NXdPsKhz4AhhtqbYRmrwm0wF834GWpptPeS41+WY9INxHvX5J/tQRoh72DOiQw==", "commit"=>"Accept", "id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for RunnersController#accept, rendering head :no_content
+Completed 204 No Content in 231ms (ActiveRecord: 0.0ms)
+
+
+Started PATCH "/runners?id=10" for ::1 at 2017-03-23 21:59:16 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SWbbNOKXoUw+q8CFC7C9tg96NXdPsKhz4AhhtqbYRmrwm0wF834GWpptPeS41+WY9INxHvX5J/tQRoh72DOiQw==", "commit"=>"Accept", "id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for RunnersController#accept, rendering head :no_content
+Started PATCH "/runners?id=10" for ::1 at 2017-03-23 21:59:17 +0800
+Completed 204 No Content in 234ms (ActiveRecord: 0.0ms)
+
+
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SWbbNOKXoUw+q8CFC7C9tg96NXdPsKhz4AhhtqbYRmrwm0wF834GWpptPeS41+WY9INxHvX5J/tQRoh72DOiQw==", "commit"=>"Accept", "id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for RunnersController#accept, rendering head :no_content
+Started PATCH "/runners?id=10" for ::1 at 2017-03-23 21:59:17 +0800
+Completed 204 No Content in 221ms (ActiveRecord: 0.0ms)
+
+
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SWbbNOKXoUw+q8CFC7C9tg96NXdPsKhz4AhhtqbYRmrwm0wF834GWpptPeS41+WY9INxHvX5J/tQRoh72DOiQw==", "commit"=>"Accept", "id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for RunnersController#accept, rendering head :no_content
+Completed 204 No Content in 233ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:59:17 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:59:20 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 24ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:59:22 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/10/delete" for ::1 at 2017-03-23 21:59:24 +0800
+Processing by FavorsController#delete as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "favors" WHERE "favors"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 21:59:24 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 21:59:33 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 21:59:47 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qEfL8dG++4IF67TemgplLEYXzdw5gVWdetyt7TEC3MPo/OE6GtMQhu2FeBvLuG+mh/zg+6kOIpJ2YpBGJK65gw==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:59:47 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/runners?id=11" for ::1 at 2017-03-23 21:59:54 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSIqpOkZJ6ebhLMibEQjy5wyXqb7Wf2yed2+th0IFXck372V+PCAsT9CTkPfI3vlZ8saz0EQcjrJk1d7Y+PxXg==", "commit"=>"Accept", "id"=>"11"}
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for RunnersController#accept, rendering head :no_content
+Completed 204 No Content in 254ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 21:59:56 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 21:59:59 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 22:00:01 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 15.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 22:00:09 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 22:00:11 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 22:00:28 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 22:00:32 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5t1XQNCZiN/qbKxp38ZWSX1PB8GteAUPTZ57dKUYOHKmZn2LG/Rj2wICYKyOdFzDvKQq5j33cgBBIEbfsLRdMg==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 22:00:32 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 22:01:20 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `runner_id' for nil:NilClass):
+    20: 	<% @juan = Juan.find_by("id = ?", f.juan_id) %>
+    21: 	<%= form_for(@runners, :url=>{:action => 'accept', :id => f.id}) do |x| %>
+    22:         Juan:<%= @juan.fname %> <%= @juan.lname %><br>
+    23:         <%= @f.runner_id %>
+    24:         Minimum Pay: <%= f.pay %><br>
+    25: 		Description: <%= f.desc %><br>
+    26: 		Location: <%= @juan.address %><br>
+  
+app/views/runners/index.html.erb:23:in `block (2 levels) in _app_views_runners_index_html_erb___990969410_81813768'
+app/views/runners/index.html.erb:21:in `block in _app_views_runners_index_html_erb___990969410_81813768'
+app/views/runners/index.html.erb:17:in `_app_views_runners_index_html_erb___990969410_81813768'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (411.0ms)
+Started GET "/runners" for ::1 at 2017-03-23 22:01:28 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/runners?id=11" for ::1 at 2017-03-23 22:01:30 +0800
+Processing by RunnersController#accept as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WntMHoN8RIOV5ptM8kFV+IMWA0exhwi9M2vlYBAdQRvjhtsvkpXjlTEgZi1BJg3WeO9HLgvOhzWDJQytbvalMg==", "commit"=>"Accept", "id"=>"11"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for RunnersController#accept, rendering head :no_content
+Completed 204 No Content in 231ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 22:01:32 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 21ms (Views: 14.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 22:01:38 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 22:01:39 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 22:01:41 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 22:01:53 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/11/delete" for ::1 at 2017-03-23 22:01:55 +0800
+Processing by FavorsController#delete as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE "favors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "favors" WHERE "favors"."id" = ?[0m  [["id", 11]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 22:01:55 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 22:01:57 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 22:02:02 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QpOGcJ6GTLv5fpgUvekLnsUsTnj6e9456p+SWXucYSkCKKy7VeunvxEQVNHsWwEUBMdjX2r0qTbmIa/ybjAEaQ==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 22:02:02 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 22:02:05 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juan" for ::1 at 2017-03-23 22:02:12 +0800
+Processing by FavorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5K2IZqNNC4aF8f7riG2dc9GqP5BbwB1Mm8/HYP6wMTnRFuoITXPZvPPvBM/Pf6tR1UR+1h49yD7+4CTGLj4Mrw==", "favor"=>{"desc"=>"Help", "skill"=>"Cleaning", "pay"=>"250"}, "commit"=>"Ask Favor"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "favors" ("desc", "juan_id", "created_at", "updated_at", "skill", "pay") VALUES (?, ?, ?, ?, ?, ?)[0m  [["desc", "Help"], ["juan_id", 1], ["created_at", 2017-03-23 14:02:12 UTC], ["updated_at", 2017-03-23 14:02:12 UTC], ["skill", "Cleaning"], ["pay", 250]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 22:02:12 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 13.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 22:02:13 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juan" for ::1 at 2017-03-23 22:02:22 +0800
+Processing by FavorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rUJDS6oRcpgNdxjx2wIKpxQkdGnSG6lmYJ1Elso3sDqY+SElRC+gontp4tWcEDyFEMo1L5fmfBQFsqcwGrmNrA==", "favor"=>{"desc"=>"Clean", "skill"=>"Cleaning", "pay"=>"522"}, "commit"=>"Ask Favor"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "favors" ("desc", "juan_id", "created_at", "updated_at", "skill", "pay") VALUES (?, ?, ?, ?, ?, ?)[0m  [["desc", "Clean"], ["juan_id", 1], ["created_at", 2017-03-23 14:02:22 UTC], ["updated_at", 2017-03-23 14:02:22 UTC], ["skill", "Cleaning"], ["pay", 522]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 22:02:22 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 22:02:23 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 22:02:26 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xEVPuyNOquKaFhyXVfJB2R9nJIKkpAaj/KKmngM+ID6E/mVw6CNB5nJ40FIEQEtT3owJpTQrcazwHJs1FpJFfg==", "login"=>{"username"=>"Runner", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Runner"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/runners
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 22:02:26 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 22:02:29 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 22:02:32 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 22:02:34 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners/1" for ::1 at 2017-03-23 22:03:38 +0800
+Processing by RunnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT  "favors".* FROM "favors" WHERE (skill = 'Cleaning') ORDER BY "favors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/runners" for ::1 at 2017-03-23 22:03:40 +0800
+Processing by RunnersController#index as HTML
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering runners/index.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (skill = 'Cleaning')[0m
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered runners/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 24ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+

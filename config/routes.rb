@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/runners/new' => 'runners#new'
   get '/runners/:id/edit' => 'runners#edit'
   patch '/runners/:id' => 'runners#update'
+  patch '/runners/' => 'runners#accept'
   get '/runners/:id' => 'runners#show'
   get '/runners/:id/delete' => 'runners#delete'
   
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
   get '/skills' => "skills#index"
   get '/skills/new' => "skills#new"
   post '/skills' => 'skills#create'
+
   #resources :logins do
   #	resources :juans
   #	resources :favours

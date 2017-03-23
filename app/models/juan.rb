@@ -8,4 +8,6 @@ class Juan < ApplicationRecord
 	juan = Juan.new
 	juan.valid?
 	juan.errors.messages
+
+	has_many :favors
 end

@@ -16,11 +16,16 @@
 <% @favor = Favor.where("skill = ?", @runners.skill) %>
 <% @favor.each do |f| %>
 	<div>
+	<% if f.runner_id == nil %>
 	<% @juan = Juan.find_by("id = ?", f.juan_id) %>
-        <a href="/juans/<%= @juan.id %>"><%= @juan.fname %> <%= @juan.lname %></a><br>
-		<%= f.desc %><br>
-		<a href="/runners/<%= f.id %>">Accept</a><br><br>
-
+	<%= form_for(@runners, :url=>{:action => 'accept', :id => f.id}) do |x| %>
+        Juan:<%= @juan.fname %> <%= @juan.lname %><br>
+        <%= f.runner_id %>
+        Minimum Pay: <%= f.pay %><br>
+		Description: <%= f.desc %><br>
+		Location: <%= @juan.address %><br>
+		<%= x.submit "Accept" %><br><br>
 	</div>
+	<% end %>
+	<% end %>
 <% end %>
-   

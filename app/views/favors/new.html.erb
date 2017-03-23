@@ -1,7 +1,7 @@
 <%= form_for(@favor, :url=>{:action => 'create'}) do |f| %>
+
 <div>
 	<table>
-	<td> Hi, <%= @juans.fname %> </td>
 	<td><a href="/login"> Logout </a></td>
 	</table>
 </div>
@@ -16,10 +16,25 @@
 </table>
 
 <div>
+	<% if @favor.errors.any? %>
+    <div id="error_explanation">
+        <h2>
+            <%= pluralize(@favor.errors.count, "error")%>
+            found: 
+        </h2>
+        <p>Oops! Update unsuccessful </p>
+        <ul>
+        <% @favor.errors.full_messages.each do |message| %>
+            <li class="_error"><%= message %></li>
+        <% end %>
+        </ul>   
+    </div>
+<% end %>
+
 	<h3> Favor Description: </h3>
 	<%= f.text_area :desc %> <br> <br>
 
-	<p> Skill Required: <%= f.select :skill, [ 'General','Cleaning', 'Cooking', 'Gardening', 'Repairing', 'Electrical', 'Plumbing' ]%> </p> <br> <br>
+	<p> Skill Required: <%= f.select :skill, [ 'General','Cleaning', 'Cooking', 'Gardening', 'Repairing', 'Electrical', 'Plumbing' ]%> </p> <br>
 
    	Minimum Pay: <%= f.text_field :pay %> <br> <br>
 

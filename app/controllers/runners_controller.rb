@@ -60,4 +60,12 @@ def delete
 	@runner.destroy
 	redirect_to "/login"
 end
+
+def accept
+	@favor = Favor.find(params[:id])
+	@runner = Runner.find(session[:id])
+
+	@favor.runner_id = @runner.id
+end
+
 end

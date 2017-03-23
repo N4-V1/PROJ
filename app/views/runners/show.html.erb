@@ -17,6 +17,16 @@
 	<p>Address: <%= @runners.address %></p>
 	<p>Contact: <%= @runners.contact %></p>
 	<p>Skill: <%= @runners.skill %> </p>
+	<h4> Favor Currently Doing </h4>
+	<% @favor = Favor.where("skill = ?", @runners.skill) %>
+	<% @juan = Juan.find_by("id = ?", @favor.first.juan_id) %>
+		<% if @favor.first.runner_id != nil %>
+        Juan: <%= @juan.fname %> <%= @juan.lname %></a><br>
+        Minimum Pay: <%= @favor.first.pay %><br>
+		Description: <%= @favor.first.desc %><br>
+		Location: <%= @juan.address %><br>
+	<a href="/favors/<%= @favor.first.id %>/delete"> Finish Task </a>
+	<% end %>
 	<p>Availability: <% if @runners.isAvailable %>
 						Yes </p>
 					 <% else %>

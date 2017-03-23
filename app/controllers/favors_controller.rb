@@ -10,6 +10,7 @@ def create
 	@favor.desc = params[:favor][:desc]
 	@favor.skill = params[:favor][:skill]
 	@favor.juan_id = Juan.find(session[:id]).id
+	@favor.pay = params[:favor][:pay]
 	
 	if @favor.save
 		redirect_to "/juans"
@@ -26,6 +27,7 @@ def update
 	@favor = Favor.find(params[:id])
 	@favor.desc = params[:favor][:desc]
 	@favor.skill = params[:favor][:skill]
+	@favor.pay = params[:favor][:pay]
 	
 	if @favor.save
 		redirect_to "/juans"
