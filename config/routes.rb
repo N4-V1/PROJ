@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  get '/login' => 'logins#login'
+  post '/login' => 'logins#create'
 
   get '/juans' => 'juans#index'
   post '/juans' => 'juans#create'
@@ -18,7 +19,9 @@ Rails.application.routes.draw do
   #get '/runners/:id/edit' => 'runners#edit'
   #get '/runners/:id' => 'runners#show'
   get '/runners/:id/delete' => 'runners#delete'
-  
-  get '/index' => 'sessions#index'
-  post '/index' => 'sessions#create'
+  resources :logins do
+  	resources :juans
+  	resources :favours
+  	resources :runners
   end
+end

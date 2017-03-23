@@ -1,6 +1,5 @@
 class JuansController < ApplicationController
-
-def new
+	def new
     @juan = Juan.new
 end
 
@@ -29,8 +28,7 @@ def show
 end
 
 def index
-
-    @juans = Juan.all
+    @juans = Juan.find(session[:id])
 end
 
 def edit

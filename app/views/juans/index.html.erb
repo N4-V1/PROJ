@@ -1,3 +1,11 @@
+<div>
+	<table>
+	<td> Hi, <%= @juans.fname %> </td>
+	<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
+	<td><a href="/login"> Logout </a></td>
+	</table>
+</div>
+
 <table>
     <thead>
         <th><a href="/juans">Available Runners</a></th>
@@ -7,22 +15,16 @@
 
 	<thead>
         <th>Name</th>
-		<th>Time Available From</th>
-		<th>Time Available To</th>
 		<th>Skill</th>
 		
     </thead>
-<% @runner = Runner.all %>
+<% @runner = Runner.where(isAvailable: true) %>
 <% @runner.each do |run| %>
     <tr>
         <td><%= run.fname %> <%= run.lname %></td>
-		<td><%= run.time_availfrom %></td>
-		<td><%= run.time_availto %></td>
 		<td><%= run.skill %></td>
 		<td><a href="/runners/<%= run.id %>">Show</a></td>
     </tr>
 <% end %>
     </tbody>
 </table>
-
-

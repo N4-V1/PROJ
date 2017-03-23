@@ -3,15 +3,17 @@
 one:
   fname: MyString
   lname: MyString
-  skill: 1
-  time_availfrom: 2017-03-19 00:59:32
-  time_availto: 2017-03-19 00:59:32
-  description: MyString
+  contact: MyString
+  username: MyString
+  password: MyString
+  favor_id: 1
+  isAvailable: false
 
 two:
   fname: MyString
   lname: MyString
-  skill: 1
-  time_availfrom: 2017-03-19 00:59:32
-  time_availto: 2017-03-19 00:59:32
-  description: MyString
+  contact: MyString
+  username: MyString
+  password: MyString
+  favor_id: 1
+  isAvailable: false

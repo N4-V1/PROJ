@@ -3,13 +3,13 @@
 one:
   fname: MyString
   lname: MyString
-  address: MyString
+  contact: MyString
   username: MyString
   password: MyString
 
 two:
   fname: MyString
   lname: MyString
-  address: MyString
+  contact: MyString
   username: MyString
   password: MyString
