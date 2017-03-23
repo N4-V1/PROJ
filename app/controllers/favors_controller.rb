@@ -43,6 +43,19 @@ end
 def delete
 	@favor = Favor.find(params[:id])
 	@favor.destroy
+
 	redirect_to "/juans"
 end
+
+def finish
+	@favor = Favor.find(params[:id])
+	@favor.destroy
+
+	@runner = Runner.find(session[:id])
+	@runner.hasTask = false
+	@runner.save
+
+	redirect_to "/runners"
+end
+
 end

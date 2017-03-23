@@ -24,7 +24,11 @@
         Minimum Pay: <%= f.pay %><br>
 		Description: <%= f.desc %><br>
 		Location: <%= @juan.address %><br>
-		<%= x.submit "Accept" %><br><br>
+		<% if !@runners.hasTask %>
+			<%= x.submit "Accept" %><br><br>
+		<% else %>
+			<br>
+		<% end %>
 	</div>
 	<% end %>
 	<% end %>

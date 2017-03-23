@@ -14,7 +14,7 @@ def create
 	@juan.contact = params[:juan][:contact]
 
 	if @juan.save
-		redirect_to "/juans"
+		redirect_to "/login"
 	else
 		render "/juans/new"
 	end

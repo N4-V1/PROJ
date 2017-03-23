@@ -13,9 +13,10 @@ def create
 	@runner.password = params[:runner][:password]
 	@runner.contact = params[:runner][:contact]
 	@runner.skill = params[:runner][:skill]
+	@runner.hasTask = false
 	
 	if @runner.save
-		redirect_to "/runners"
+		redirect_to "/login"
 	else
 		render "/runners/new"
 	end
@@ -66,6 +67,12 @@ def accept
 	@runner = Runner.find(session[:id])
 
 	@favor.runner_id = @runner.id
+	@runner.hasTask = true
+
+	if @runner.save && @favor.save
+		redirect_to "/runners"
+	end
+
 end
 
 end

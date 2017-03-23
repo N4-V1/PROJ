@@ -17,17 +17,17 @@
 	<p>Address: <%= @runners.address %></p>
 	<p>Contact: <%= @runners.contact %></p>
 	<p>Skill: <%= @runners.skill %> </p>
-	<h4> Favor Currently Doing </h4>
-	<% @favor = Favor.where("skill = ?", @runners.skill) %>
-	<% @juan = Juan.find_by("id = ?", @favor.first.juan_id) %>
-		<% if @favor.first.runner_id != nil %>
+	<h4> Favor Currently Doing </h4> 
+	<% @favor = Favor.find_by("runner_id = ?", @runners.id) %>
+	<% if @favor %>
+	<% @juan = Juan.find_by("id = ?", @favor.juan_id) %>
         Juan: <%= @juan.fname %> <%= @juan.lname %></a><br>
-        Minimum Pay: <%= @favor.first.pay %><br>
-		Description: <%= @favor.first.desc %><br>
+        Minimum Pay: <%= @favor.pay %><br>
+		Description: <%= @favor.desc %><br>
 		Location: <%= @juan.address %><br>
-	<a href="/favors/<%= @favor.first.id %>/delete"> Finish Task </a>
+	<a href="/favors/<%= @favor.id %>/finish"> Finish Task </a>
 	<% end %>
-	<p>Availability: <% if @runners.isAvailable %>
+	<p>Available?: <% if @runners.isAvailable %>
 						Yes </p>
 					 <% else %>
 					    No </p>

@@ -17,11 +17,14 @@ Rails.application.routes.draw do
   post '/runners' => 'runners#create'
   get '/runners/new' => 'runners#new'
   get '/runners/:id/edit' => 'runners#edit'
-  patch '/runners/:id' => 'runners#update'
-  patch '/runners/' => 'runners#accept'
+  patch '/runners' => 'runners#update'
+  patch '/favors/:id' => 'runners#accept'
   get '/runners/:id' => 'runners#show'
   get '/runners/:id/delete' => 'runners#delete'
-  
+
+  get '/favors/:id/finish' => 'favors#finish'
+  patch '/favors/:id/finish' => 'favors#finish'
+
   get '/favors/new' => "favors#new"
   get '/favors/:id/delete' => "favors#delete"
   get '/favors/:id/edit' => 'favors#edit'
