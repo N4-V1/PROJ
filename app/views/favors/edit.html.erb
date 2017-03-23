@@ -1,0 +1,10 @@
+<%= form_for(@favor, :url=>{:action => 'update'}) do |f| %>
+	
+    <div>
+	<h3> Favor Description: </h3>
+	<%= f.text_area :desc, :value => @favor.desc %> <br><br>
+	<p> Skill Required: <%= f.select :skill, [ 'General','Cleaning', 'Cooking', 'Gardening', 'Repairing', 'Electrical', 'Plumbing' ]%> </p> <br> <br>
+   
+	<%= f.submit "Update Favor" %>
+	</div>
+<% end %>

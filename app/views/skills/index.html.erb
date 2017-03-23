@@ -1,32 +1,5 @@
-<table>
-    <thead>
-        <th><a href="/juans">Available Runners</a></th>
-		<th><a href="/favors/new">Ask a Favor</a></th>
-		<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
-		
-    </thead>
-
-	<tbody>
-	<thead>
-        <th>Name</th>
-		<th>Skill</th>
-		
-    </thead>
-
-<% @runner = Runner.where(isAvailable: true) %>
-<% @runner.each do |run| %>
-    <tr>
-        <td><%= run.fname %> <%= run.lname %></td>
-		<td><%= run.skill %></td>
-		<td><a href="/runners/<%= run.id %>">Show</a></td>
-    </tr>
-<% end %>
-    </tbody>
-</table>
-
 <h2> Skills </h2>
-<% @skill.each do |s| %>
+<% @skills.each do |s| %>
 	<p><%= s.name %></p>
 <% end %>
-<a href="/skill/new"> Add Skill </a>
-<p> </p>
+<a href="/skills/new"> Add Skill </a>

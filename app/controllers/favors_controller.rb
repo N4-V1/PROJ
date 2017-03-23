@@ -8,7 +8,7 @@ def create
    # @juan = Juan.new(params[:juan_params])
     @favor = Favor.new()
 	@favor.desc = params[:favor][:desc]
-	@favor.skill_id = params[:favor][:skill]
+	@favor.skill = params[:favor][:skill]
 	@favor.juan_id = Juan.find(session[:id]).id
 	
 	if @favor.save
@@ -18,10 +18,29 @@ def create
 	end
 end
 
-def update
+def edit
 	@favor = Favor.find(params[:id])
-	@favor.update_attributes(params[:favor])
-	redirect_to "/juans/#{@juan.id}"
 end
 
+def update
+	@favor = Favor.find(params[:id])
+	@favor.desc = params[:favor][:desc]
+	@favor.skill = params[:favor][:skill]
+	
+	if @favor.save
+		redirect_to "/juans"
+	else
+		render "/favors/new"
+	end
+end
+
+def index
+	@favor = Favor.all
+end
+
+def delete
+	@favor = Favor.find(params[:id])
+	@favor.destroy
+	redirect_to "/juans"
+end
 end

@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323073615) do
+ActiveRecord::Schema.define(version: 20170323110708) do
 
   create_table "favors", force: :cascade do |t|
     t.string   "desc"
-    t.boolean  "isAvailable"
     t.integer  "juan_id"
     t.integer  "runner_id"
-    t.integer  "skill_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "skill"
   end
 
   create_table "juans", force: :cascade do |t|

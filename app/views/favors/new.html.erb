@@ -9,7 +9,7 @@
 <table>
     <thead>
         <th><a href="/juans">Available Runners</a></th>
-		<th><a href="/juans">Ask a Favor</a></th>
+		<th><a href="/favors/new">Ask a Favor</a></th>
 		<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
 		
     </thead>
@@ -19,7 +19,7 @@
 	<h3> Favor Description: </h3>
 	<%= f.text_area :desc %> <br> <br>
 
-	<p> Skill Required: <%= f.select :skill_id, [['Cleaning',1],['Cooking',2]] %> </p> <br> <br>
+	<p> Skill Required: <%= f.select :skill, [ 'General','Cleaning', 'Cooking', 'Gardening', 'Repairing', 'Electrical', 'Plumbing' ]%> </p> <br> <br>
 
    
 	<%= f.submit "Ask Favor" %>

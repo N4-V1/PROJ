@@ -1,17 +1,17 @@
 class SkillsController < ApplicationController
 def new
-    @juan = Juan.new
+    @skill = Skill.new
 end
 
 def create
    # @juan = Juan.new(params[:juan_params])
-    @skills = Juan.new()
-	@juan.skill = params[:juan][:fname]
+    @skill = Skill.new()
+	@skill.name = params[:skill][:name]
 
-	if @juan.save
-		redirect_to "/juans"
+	if @skill.save
+		redirect_to "/skills"
 	else
-		render "/juans/new"
+		render "/skills/new"
 	end
 end
 
@@ -20,26 +20,16 @@ end
  #end
 
 def show
-   @juans = Juan.find(params[:id])
+   @skills = Skill.find(params[:id])
 end
 
 def index
-    @juans = Juan.find(session[:id])
-end
-
-def edit
-	@juan = Juan.find(session[:id])
-end
-
-def update
-	@juan = Juan.find(session[:id])
-	@juan.update_attributes(params[:juan])
-	redirect_to "/juans/#{@juan.id}"
+    @skills = Skill.all
 end
 
 def delete
-	@juan = Juan.find(params[:id])
-	@juan.destroy
-	redirect_to "/juans"
+	@skill = Skill.find(params[:id])
+	@skill.destroy
+	redirect_to "/skills"
 end
 end

@@ -1,0 +1,6 @@
+<%= form_for(@skill, :url=>{:action => 'create'}) do |f| %>
+	
+	<%= f.label :skill %> <%= f.text_field :name %> <br><br>
+   
+	<%= f.submit "Add Skill" %>
+<% end %>

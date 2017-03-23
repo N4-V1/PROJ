@@ -8,21 +8,25 @@
 <table>
     <thead>
         <th><a href="/juans">Available Runners</a></th>
-		<th><a href="/juans/">Ask a Favor</a></th>
+		<th><a href="/favors/new">Ask a Favor</a></th>
 		<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
 		
     </thead>
 </table>
 
+
 <p>Name: <%= @juans.fname %> <%= @juans.lname %></p>
 	<p>Address: <%= @juans.address %></p>
-	
+	<p>Contact: <%= @juans.contact %></p>
 	<% @favor = Favor.where("juan_id = ?", @juans.id) %>
+	<% @count = 1 %>
 	<% @favor.each do |f| %>
-	    	<% @count = 1 %>
 	    	<h4> Favor <%= @count %>: </h4>
 	        <p><%= f.desc %></p>
-			<p>Needed Skill: <%= f.skill_id %></p>
+			<p>Needed Skill: <%= f.skill %></p>
+		<% @count = @count + 1 %>
+	</p> <a href="/favors/<%= f.id %>/edit"> Update Favor </a></p>
+	</p> <a href="/favors/<%= f.id %>/delete"> Delete Favor </a></p>
 	<% end %>
 
 	<p><a href="/juans/<%= @juans.id %>/edit"> Edit Profile </a></p>

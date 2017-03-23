@@ -21,7 +21,14 @@ Rails.application.routes.draw do
   get '/runners/:id/delete' => 'runners#delete'
   
   get '/favors/new' => "favors#new"
+  get '/favors/:id/delete' => "favors#delete"
+  get '/favors/:id/edit' => 'favors#edit'
+  patch '/favors/:id' => 'favors#update'
   post '/juan' => 'favors#create'
+
+  get '/skills' => "skills#index"
+  get '/skills/new' => "skills#new"
+  post '/skills' => 'skills#create'
   #resources :logins do
   #	resources :juans
   #	resources :favours

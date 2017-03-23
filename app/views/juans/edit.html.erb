@@ -6,7 +6,7 @@
             <%= pluralize(@juan.errors.count, "error")%>
             found: 
         </h2>
-        <p>Oops! Registration unsuccessful </p>
+        <p>Oops! Update unsuccessful </p>
         <ul>
         <% @juan.errors.full_messages.each do |message| %>
             <li class="_error"><%= message %></li>
@@ -20,6 +20,7 @@
 	<%= f.label :First_Name %> <%= f.text_field :fname, :value => @juan.fname %> <br><br>
 	<%= f.label :Last_Name %> <%= f.text_field :lname, :value => @juan.lname %> <br><br>
 	<%= f.label :address %> <%= f.text_field :address, :value => @juan.address%> <br><br>
+    <%= f.label :Contact %> <%= f.text_field :contact, :value => @juan.contact%> <br><br>
    
 	<%= f.submit "Update Profile" %>
 	</div>

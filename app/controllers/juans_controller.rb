@@ -11,6 +11,7 @@ def create
 	@juan.address = params[:juan][:address]
 	@juan.username = params[:juan][:username]
 	@juan.password = params[:juan][:password]
+	@juan.contact = params[:juan][:contact]
 	
 	if @juan.save
 		redirect_to "/juans"
@@ -37,8 +38,18 @@ end
 
 def update
 	@juan = Juan.find(session[:id])
-	@juan.update_attributes(params[:juan])
-	redirect_to "/juans/#{@juan.id}"
+	#@juan.update_attributes(params[:juan])
+	@juan.fname = params[:juan][:fname]
+	@juan.lname = params[:juan][:lname]
+	@juan.address = params[:juan][:address]
+	@juan.contact = params[:juan][:contact]
+	
+	if @juan.save
+		redirect_to "/juans"
+	else
+		render "/juans/new"
+	end
+	#redirect_to "/juans/#{@juan.id}"
 end
 
 def delete

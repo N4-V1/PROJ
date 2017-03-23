@@ -1,0 +1,5 @@
+class RemoveSkillIdFromFavor < ActiveRecord::Migration[5.0]
+  def change
+    remove_column :favors, :skill_id, :integer
+  end
+end
