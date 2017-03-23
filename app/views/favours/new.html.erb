@@ -1,9 +1,0 @@
-<%= form_for(@favours) do |f| %>
-
-	<%= f.label :description %> <%= f.text_area :description %> <br>
-	<%= f.label :price %> <%= f.text_field :price %> <br>
-	<%= f.label :date %> <%= f.text_field :time_availto %> <br>
-    <%= f.label :skill %> <%= f.select :skill_id, [['Cleaning',1],['Cooking',2]] %> <br>
-	<%= f.submit "Register" %>
-	
-<% end %>

@@ -1,0 +1,709 @@
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateJuans (20170323071400)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "juans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fname" varchar, "lname" varchar, "contact" varchar, "username" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170323071400"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRunners (20170323071440)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "runners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fname" varchar, "lname" varchar, "contact" varchar, "username" varchar, "password" varchar, "favor_id" integer, "isAvailable" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170323071440"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFavors (20170323071526)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "favors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "desc" varchar, "isAvailable" boolean, "juan_id" integer, "runner_id" integer, "skill_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170323071526"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSkills (20170323071544)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "skills" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170323071544"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-23 07:15:52 UTC], ["updated_at", 2017-03-23 07:15:52 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/login" for ::1 at 2017-03-23 15:23:35 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (433.0ms)
+Started GET "/login" for ::1 at 2017-03-23 15:23:54 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 464ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+    4:     <title>JuanRun</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__641432901_43792704'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (405.0ms)
+Started GET "/login" for ::1 at 2017-03-23 15:24:33 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+    4:     <title>JuanRun</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <!--<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__641432901_85069488'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (413.0ms)
+Started GET "/login" for ::1 at 2017-03-23 15:24:50 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 15:28:44 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 15:29:21 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 15:29:31 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 15:34:21 +0800
+  
+ActionController::RoutingError (undefined local variable or method `params' for LoginsController:Class):
+  
+app/controllers/logins_controller.rb:2:in `<class:LoginsController>'
+app/controllers/logins_controller.rb:1:in `<top (required)>'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [13 times] (3.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (511.0ms)
+Started GET "/login" for ::1 at 2017-03-23 15:35:24 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/new" for ::1 at 2017-03-23 15:35:27 +0800
+Processing by JuansController#new as HTML
+  Rendering juans/new.html.erb within layouts/application
+  Rendered juans/new.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `address' for #<Juan:0x9889140>):
+    22: 	<h3> User Information: </h3>
+    23: 	<%= f.label :First_Name %> <%= f.text_field :fname %> <br>
+    24: 	<%= f.label :Last_Name %> <%= f.text_field :lname %> <br>
+    25: 	<%= f.label :address %> <%= f.text_field :address %> <br>
+    26:    
+    27: 	<%= f.submit "Register" %>
+    28: 	
+  
+app/views/juans/new.html.erb:25:in `block in _app_views_juans_new_html_erb__399881724_77676492'
+app/views/juans/new.html.erb:1:in `_app_views_juans_new_html_erb__399881724_77676492'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (408.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAddressToJuan (20170323073615)
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "juans" ADD "address" varchar[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170323073615"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/juans/new" for ::1 at 2017-03-23 15:36:27 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by JuansController#new as HTML
+  Rendering juans/new.html.erb within layouts/application
+  Rendered juans/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 58ms (Views: 38.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/new" for ::1 at 2017-03-23 15:37:17 +0800
+Processing by JuansController#new as HTML
+  Rendering juans/new.html.erb within layouts/application
+  Rendered juans/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juans" for ::1 at 2017-03-23 15:41:11 +0800
+Processing by JuansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0h0nLe6xbvohagAZrptzZlwMU7rddKUIIuRF5eCtLDOtmMWpFA9XmDKlRj/U1BksUDtkpwa4E8LydPAgqVQ8ZA==", "juan"=>{"username"=>"Justin", "password"=>"[FILTERED]", "fname"=>"Justin", "lname"=>"", "address"=>""}, "commit"=>"Register"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering juans/new.html.erb within layouts/application
+  Rendered juans/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 37ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/new" for ::1 at 2017-03-23 15:42:19 +0800
+Processing by JuansController#new as HTML
+  Rendering juans/new.html.erb within layouts/application
+  Rendered juans/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juans" for ::1 at 2017-03-23 15:42:26 +0800
+Processing by JuansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zP0/DOLKeGLNrfAnrJJfuB9Vi6nA3CNdyastWLzCC0qzeN2IGHRBAN5itgHW3TXyE2K8tBsQlZcZO5id9TsbHQ==", "juan"=>{"username"=>"Justin", "password"=>"[FILTERED]", "fname"=>"aaa", "lname"=>"", "address"=>""}, "commit"=>"Register"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering juans/new.html.erb within layouts/application
+  Rendered juans/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juans" for ::1 at 2017-03-23 15:42:44 +0800
+Processing by JuansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XkhTrIWLHgtsO9vrisjo17OmmS2mgJ0/VE6ZgUtGEishzbEofzUnaX/0nc3wh4Kdv5GuMH1MK/WE3ixEAr8CfA==", "juan"=>{"username"=>"Justin", "password"=>"[FILTERED]", "fname"=>"Justin", "lname"=>"Ayubo", "address"=>"Naga City"}, "commit"=>"Register"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "juans" ("fname", "lname", "username", "password", "created_at", "updated_at", "address") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["fname", "Justin"], ["lname", "Ayubo"], ["username", "Justin"], ["password", "12345678"], ["created_at", 2017-03-23 07:42:44 UTC], ["updated_at", 2017-03-23 07:42:44 UTC], ["address", "Naga City"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 15:42:44 +0800
+Processing by JuansController#index as HTML
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners"[0m
+  Rendered juans/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 15:44:59 +0800
+Processing by JuansController#index as HTML
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 15:46:30 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  Rendered juans/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 15:47:15 +0800
+Processing by JuansController#index as HTML
+  Rendering juans/index.html.erb within layouts/application
+  Rendered juans/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <p> Hi, <%= @juan.first_name %> </p>
+    2: <table>
+    3:     <thead>
+    4:         <th><a href="/juans">Available Runners</a></th>
+  
+app/views/juans/index.html.erb:1:in `_app_views_juans_index_html_erb__49672694_38933628'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (406.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 15:47:43 +0800
+Processing by JuansController#index as HTML
+  Rendering juans/index.html.erb within layouts/application
+  Rendered juans/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for nil:NilClass):
+    1: <p> Hi, <%= @juan.fname %> </p>
+    2: <table>
+    3:     <thead>
+    4:         <th><a href="/juans">Available Runners</a></th>
+  
+app/views/juans/index.html.erb:1:in `_app_views_juans_index_html_erb__49672694_34838952'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (409.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 15:48:50 +0800
+  
+SyntaxError (c:/Sites/JuanRun/app/controllers/juans_controller.rb:31: syntax error, unexpected '=', expecting ')'
+    @juans = Juan.where(:username = params[:username])
+                                   ^
+c:/Sites/JuanRun/app/controllers/juans_controller.rb:31: syntax error, unexpected ')', expecting keyword_end
+c:/Sites/JuanRun/app/controllers/juans_controller.rb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/juans_controller.rb:31: syntax error, unexpected '=', expecting ')'
+app/controllers/juans_controller.rb:31: syntax error, unexpected ')', expecting keyword_end
+app/controllers/juans_controller.rb:47: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (407.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 15:53:11 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  Rendered juans/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for nil:NilClass):
+    1: <p> Hi, <%= @juan.fname %> </p>
+    2: <table>
+    3:     <thead>
+    4:         <th><a href="/juans">Available Runners</a></th>
+  
+app/views/juans/index.html.erb:1:in `_app_views_juans_index_html_erb__49672694_38980512'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (405.0ms)
+Started GET "/login" for ::1 at 2017-03-23 15:53:16 +0800
+  
+SyntaxError (c:/Sites/JuanRun/app/controllers/logins_controller.rb:5: syntax error, unexpected ')', expecting ']'):
+  
+app/controllers/logins_controller.rb:5: syntax error, unexpected ')', expecting ']'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (387.0ms)
+Started GET "/login" for ::1 at 2017-03-23 15:53:32 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 15:53:39 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U9grIemf3moJkl5TQnpzEFf57DWBaOTxmClxgzlg04oTYwHqIvI1buH8kpYTyHmalhLBEhHnk/6Ul0woLMy2yg==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 15:53:39 +0800
+Processing by JuansController#index as HTML
+  Rendering juans/index.html.erb within layouts/application
+  Rendered juans/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for nil:NilClass):
+    1: <p> Hi, <%= @juan.fname %> </p>
+    2: <table>
+    3:     <thead>
+    4:         <th><a href="/juans">Available Runners</a></th>
+  
+app/views/juans/index.html.erb:1:in `_app_views_juans_index_html_erb__49672694_39499020'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (408.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 15:56:37 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  Rendered juans/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for nil:NilClass):
+    1: <p> Hi, <%= @juan.fname %> </p>
+    2: <table>
+    3:     <thead>
+    4:         <th><a href="/juans">Available Runners</a></th>
+  
+app/views/juans/index.html.erb:1:in `_app_views_juans_index_html_erb__49672694_31912524'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (441.0ms)
+Started GET "/login" for ::1 at 2017-03-23 15:56:41 +0800
+  
+SyntaxError (c:/Sites/JuanRun/app/controllers/logins_controller.rb:8: syntax error, unexpected '(', expecting '}'
+			format.html { redirect_to "/juans" (:username => @username) }
+			                                    ^
+c:/Sites/JuanRun/app/controllers/logins_controller.rb:11: syntax error, unexpected keyword_else, expecting '}'
+c:/Sites/JuanRun/app/controllers/logins_controller.rb:14: syntax error, unexpected keyword_end, expecting '}'):
+  
+app/controllers/logins_controller.rb:8: syntax error, unexpected '(', expecting '}'
+app/controllers/logins_controller.rb:11: syntax error, unexpected keyword_else, expecting '}'
+app/controllers/logins_controller.rb:14: syntax error, unexpected keyword_end, expecting '}'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (382.0ms)
+Started GET "/login" for ::1 at 2017-03-23 16:01:14 +0800
+Started GET "/login" for ::1 at 2017-03-23 16:01:14 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginsController#login as HTML
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (27.0ms)
+  Rendered logins/login.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 74ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 70ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 16:01:31 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TEEBukpFYr1s+XUFSsipZlmNd1AV1xfhQA8rQ8jJQOIM+itxgSiJuYSXucAbeqPsmGZad4VYYO5MsRbo3WUlog==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 28ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 16:01:31 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 16:01:37 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y6p87eK9ELEqYNx5Y30daIp1ZyuRZFQaaVLvvOo/6gWLEVYmKdD7tcIOELwyzxfiS55KDAHrIxVl7NIX/5OPRQ==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:01:37 +0800
+Processing by JuansController#index as HTML
+  Rendering juans/index.html.erb within layouts/application
+  Rendered juans/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for nil:NilClass):
+    1: <p> Hi, <%= @juan.fname %> </p>
+    2: <table>
+    3:     <thead>
+    4:         <th><a href="/juans">Available Runners</a></th>
+  
+app/views/juans/index.html.erb:1:in `_app_views_juans_index_html_erb__976396623_41648076'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (409.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 16:03:29 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Juan with 'id'=):
+  
+app/controllers/juans_controller.rb:31:in `index'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (416.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 16:04:22 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/juans_controller.rb:31:in `index'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (385.0ms)
+Started GET "/login" for ::1 at 2017-03-23 16:07:09 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+Started GET "/login" for ::1 at 2017-03-23 16:07:09 +0800
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 16:07:22 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ntFy6xKXezZNlWIlmvJGRswC9UqmdlPwdfNi98FPByHealgg2fqQMqX7ruDLQEzMDenYbTb5JP95TV9c1ONiYQ==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:07:22 +0800
+Processing by JuansController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/juans_controller.rb:31:in `index'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (405.0ms)
+Started GET "/login" for ::1 at 2017-03-23 16:07:55 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 16:07:58 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 16:08:04 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3S67UL/pgSajcmYSPDEVYf1QJ2rHY2Phynj/P2e4JUSdlZGbdIRqIkscqtdtgx/rPLsKTVfsFO7GxsKUchRABA==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 20ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:08:04 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  Rendered juans/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for nil:NilClass):
+    1: <p> Hi, <%= @juan.fname %> </p>
+    2: <table>
+    3:     <thead>
+    4:         <th><a href="/juans">Available Runners</a></th>
+  
+app/views/juans/index.html.erb:1:in `_app_views_juans_index_html_erb__976396623_44654652'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (407.0ms)
+Started GET "/login" for ::1 at 2017-03-23 16:08:40 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 16:08:45 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XUYcu6YXslpY7b9jLXhNgAe7dUZLZ7XUxvuDYURx4bEd/TZwbXpZXrCDc6Z8ykcKxlBYYdvowtvKRb7KUd2E8Q==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 2ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:08:45 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:14:12 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:14:14 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  Rendered juans/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 19ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+

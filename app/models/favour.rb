@@ -1,2 +1,0 @@
-class Favour < ApplicationRecord
-end
