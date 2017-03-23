@@ -1,11 +1,11 @@
 # README
 
-Rails Version: 3.3.0__
-Initial Page: /login__
+Rails Version: 3.3.0  
+Initial Page: /login  
 
-Members:__
-Ayubo, Justin Ryan__
-Barranda, Rowell__
-Nacario, Ivan Christian__
-Romero, Diana Marie [Graduated]__
-Tusit, Eloise Peem__
+Members:  
+Ayubo, Justin Ryan  
+Barranda, Rowell  
+Nacario, Ivan Christian  
+Romero, Diana Marie [Graduated]  
+Tusit, Eloise Peem  
