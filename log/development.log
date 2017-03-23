@@ -707,3 +707,970 @@ Processing by JuansController#show as HTML
 Completed 200 OK in 19ms (Views: 13.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/juans" for ::1 at 2017-03-23 16:33:41 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by JuansController#index as HTML
+  [1m[36mJuan Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 62ms (Views: 23.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 16:33:51 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 16:33:55 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6vmKHHdtkbTbafCtlMdHC0UC7mpjQdlZQbTsf8HmHRiqQqDXvAB6sDMHPGjFdU2BhOnDTfPOrlZNCtHU1Ep4WA==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 16:33:55 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 16:34:03 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sQVrY2lK2lZBQevvUf+fqTCXAYX2JDNihlJAaPiishvxvkGooicxUqkvJyoATZUj8XwsomarRG2K7H3D7Q7XWw==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:34:03 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:35:36 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:35:55 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:40:38 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 22ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:40:40 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = )[0m
+  Rendered juans/show.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: near ")": syntax error: SELECT "favors".* FROM "favors" WHERE (juan_id = )):
+    18: 	<p>Address: <%= @juans.address %></p>
+    19: 	
+    20: 	<% @favor = Favor.where("juan_id = ", @juans.id) %>
+    21: 	<% @favor.each do |f| %>
+    22: 	    	<% @count = 0 %>
+    23: 	    	<h3> Favor <%= @count %>: </h3>
+    24: 	        <p><%= f.desc %></p>
+  
+app/views/juans/show.html.erb:21:in `_app_views_juans_show_html_erb___219556737_40502220'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (408.0ms)
+Started GET "/juans/1" for ::1 at 2017-03-23 16:41:40 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:42:05 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  Rendered juans/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:42:10 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:42:27 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:42:29 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:42:29 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:42:29 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:42:32 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (1.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 13.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:42:35 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 22ms (Views: 14.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:42:38 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:43:21 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:44:31 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 16:53:57 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 48ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-23 16:54:03 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 16:54:10 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/+tazoLpuY4NyUGr0138OyvR0fiz02jIODHznNiVw8u/UHAFSYRSiuWnjW6C7/ax6jr83yNcH8c0j843zTmmiw==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 26ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:54:10 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:54:12 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 16:54:13 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/juans/1/edit"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered collection of c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [45 times] (6.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (553.0ms)
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 16:56:48 +0800
+Processing by JuansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/edit.html.erb within layouts/application
+  Rendered juans/edit.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@juan) do |f| %>
+    2: 
+    3: <% if @juan.errors.any? %>
+    4:     <div id="error_explanation">
+  
+app/views/juans/edit.html.erb:1:in `_app_views_juans_edit_html_erb__133322843_45805584'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (385.0ms)
+Started GET "/login" for ::1 at 2017-03-23 16:57:53 +0800
+Processing by LoginsController#login as HTML
+  Rendering logins/login.html.erb within layouts/application
+  Rendered logins/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-23 16:57:56 +0800
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JrrFAyRQwS2I5wfnXji1jaoNxUQ7JDlXMnUm2W8IXgBmAe/I7z0qKWCJyyIPir8Ha+boY6urTlg+yxtyeqQ7QA==", "login"=>{"username"=>"Justin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT  "runners".* FROM "runners" WHERE "runners"."username" = ? LIMIT ?[0m  [["username", "Justin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 16:57:56 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (1.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 13.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 16:57:58 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 23ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 16:58:01 +0800
+Processing by JuansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/edit.html.erb within layouts/application
+  Rendered juans/edit.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@juan) do |f| %>
+    2: 
+    3: <% if @juan.errors.any? %>
+    4:     <div id="error_explanation">
+  
+app/views/juans/edit.html.erb:1:in `_app_views_juans_edit_html_erb__133322843_41551236'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (382.0ms)
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 16:58:33 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/juans/1/edit"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [47 times] (7.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (545.0ms)
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 16:58:56 +0800
+Processing by JuansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/edit.html.erb within layouts/application
+  Rendered juans/edit.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@juan) do |f| %>
+    2: 
+    3: <% if @juan.errors.any? %>
+    4:     <div id="error_explanation">
+  
+app/views/juans/edit.html.erb:1:in `_app_views_juans_edit_html_erb__133322843_44401068'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (407.0ms)
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 16:59:12 +0800
+Processing by JuansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/edit.html.erb within layouts/application
+  Rendered juans/edit.html.erb within layouts/application (80.0ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `juan_path' for #<#<Class:0x546bd90>:0x526fd10>
+Did you mean?  juans_path):
+    1: <%= form_for(@juans) do |f| %>
+    2: 
+    3: <% if @juan.errors.any? %>
+    4:     <div id="error_explanation">
+  
+app/views/juans/edit.html.erb:1:in `_app_views_juans_edit_html_erb__133322843_43239024'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (419.0ms)
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 16:59:25 +0800
+Processing by JuansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/edit.html.erb within layouts/application
+  Rendered juans/edit.html.erb within layouts/application (76.0ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `juan_path' for #<#<Class:0x4dc4450>:0x4db7670>
+Did you mean?  juans_path):
+    1: <%= form_for(@juan) do |f| %>
+    2: 
+    3: <% if @juan.errors.any? %>
+    4:     <div id="error_explanation">
+  
+app/views/juans/edit.html.erb:1:in `_app_views_juans_edit_html_erb__133322843_40773348'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (408.0ms)
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 17:00:09 +0800
+Processing by JuansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/edit.html.erb within layouts/application
+  Rendered juans/edit.html.erb within layouts/application (78.0ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `juan_path' for #<#<Class:0x4d7fcc0>:0x4d7ea78>
+Did you mean?  juans_path):
+    1: <%= form_for(@juan) do |f| %>
+    2: 
+    3: <% if @juan.errors.any? %>
+    4:     <div id="error_explanation">
+  
+app/views/juans/edit.html.erb:1:in `_app_views_juans_edit_html_erb__133322843_40641264'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (383.0ms)
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 17:00:41 +0800
+Processing by JuansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/edit.html.erb within layouts/application
+  Rendered juans/edit.html.erb within layouts/application (78.0ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `juan_path' for #<#<Class:0x4c7ed58>:0x4c7e158>
+Did you mean?  juans_path):
+    1: <%= form_for(@juan) do |f| %>
+    2: 
+    3: <% if @juan.errors.any? %>
+    4:     <div id="error_explanation">
+  
+app/views/juans/edit.html.erb:1:in `_app_views_juans_edit_html_erb__133322843_40106580'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (414.0ms)
+Started GET "/juans/sign_up" for ::1 at 2017-03-23 17:03:26 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"sign_up"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Juan with 'id'=sign_up):
+  
+app/controllers/juans_controller.rb:27:in `show'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (404.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 17:03:29 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 17:03:31 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 17:03:32 +0800
+Processing by JuansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/edit.html.erb within layouts/application
+  Rendered juans/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1/edit" for ::1 at 2017-03-23 17:03:48 +0800
+Processing by JuansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/edit.html.erb within layouts/application
+  Rendered juans/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 17:04:01 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 33ms (Views: 16.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans/" for ::1 at 2017-03-23 17:04:03 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/" for ::1 at 2017-03-23 17:12:42 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 37ms (Views: 16.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 17:12:43 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 17:13:00 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 17:13:00 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/favors/new"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [47 times] (6.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (520.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 17:13:15 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 34ms (Views: 17.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 17:13:15 +0800
+Processing by FavorsController#new as HTML
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for nil:NilClass):
+    1: <div>
+    2: 	<table>
+    3: 	<td> Hi, <%= @juans.fname %> </td>
+    4: 	<td><a href="/login"> Logout </a></td>
+    5: 	</table>
+    6: </div>
+  
+app/views/favors/new.html.erb:3:in `_app_views_favors_new_html_erb__7962626_22303380'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (406.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 17:14:19 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 34ms (Views: 16.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 17:14:20 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (147.0ms)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x4c2de48>:0x4c2cff0>):
+    16: 	<tbody>
+    17: 	<div>
+    18: 	<h3> Favor Description: </h3>
+    19: 	<%= f.text_area :desc %> <br> <br>
+    20: 
+    21: 	<%= f.label :skill %> <%= f.select :skill, [['Cleaning',1],['Cooking',2]] %> <br> <br>
+    22: 	
+  
+app/views/favors/new.html.erb:19:in `_app_views_favors_new_html_erb__7962626_39940776'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (386.0ms)
+Started GET "/juans" for ::1 at 2017-03-23 17:16:28 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 17:16:29 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@juan) do |f| %>
+    2: <div>
+    3: 	<table>
+    4: 	<td> Hi, <%= @juans.fname %> </td>
+  
+app/views/favors/new.html.erb:1:in `_app_views_favors_new_html_erb__7962626_29662788'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (409.0ms)
+Started GET "/favors/new" for ::1 at 2017-03-23 17:16:57 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (77.0ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `favors_path' for #<#<Class:0x4c2de48>:0x5508b28>
+Did you mean?  favours_path):
+    1: <%= form_for(@favor) do |f| %>
+    2: <div>
+    3: 	<table>
+    4: 	<td> Hi, <%= @juans.fname %> </td>
+  
+app/views/favors/new.html.erb:1:in `_app_views_favors_new_html_erb__7962626_44583252'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (416.0ms)
+Started GET "/favors/new" for ::1 at 2017-03-23 17:17:32 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `skill' for #<Favor:0x5088768>
+Did you mean?  skill_id):
+    19: 	<h3> Favor Description: </h3>
+    20: 	<%= f.text_area :desc %> <br> <br>
+    21: 
+    22: 	<%= f.label :skill %> <%= f.select :skill, [['Cleaning',1],['Cooking',2]] %> <br> <br>
+    23: 
+    24:    
+    25: 	<%= f.submit "Register" %>
+  
+app/views/favors/new.html.erb:22:in `block in _app_views_favors_new_html_erb__7962626_42166824'
+app/views/favors/new.html.erb:1:in `_app_views_favors_new_html_erb__7962626_42166824'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (405.0ms)
+Started GET "/favors/new" for ::1 at 2017-03-23 17:18:44 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 17:19:55 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 17:20:05 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 17:22:46 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "juans" WHERE "juans"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favors/new" for ::1 at 2017-03-23 17:23:20 +0800
+Processing by FavorsController#new as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering favors/new.html.erb within layouts/application
+  Rendered favors/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/juan" for ::1 at 2017-03-23 17:23:44 +0800
+Processing by FavorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HOb9LwwmhXSYI9k8VjHKDqu0B7CR5doChh/4wLTVc38pXZ9B4hhXTu49IxgRI/wsr1pG9tQYD3DjMBtmZFtO6Q==", "favor"=>{"desc"=>"Help clean my garage.", "skill_id"=>"1"}, "commit"=>"Ask Favor"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "favors" ("desc", "juan_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["desc", "Help clean my garage."], ["juan_id", 1], ["created_at", 2017-03-23 09:23:44 UTC], ["updated_at", 2017-03-23 09:23:44 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/juans
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/juans" for ::1 at 2017-03-23 17:23:44 +0800
+Processing by JuansController#index as HTML
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/index.html.erb within layouts/application
+  [1m[36mRunner Load (0.0ms)[0m  [1m[34mSELECT "runners".* FROM "runners" WHERE "runners"."isAvailable" = ?[0m  [["isAvailable", true]]
+  Rendered juans/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/juans/1" for ::1 at 2017-03-23 17:23:52 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (0.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `skill' for #<Favor:0x4c94ef8>
+Did you mean?  skill_id):
+    22: 	    	<% @count = 0 %>
+    23: 	    	<h3> Favor <%= @count %>: </h3>
+    24: 	        <p><%= f.desc %></p>
+    25: 			<p>Needed Skill: <%= f.skill %></p>
+    26: 	<% end %>
+    27: 
+    28: 	<p><a href="/juans/<%= @juans.id %>/edit"> Edit Profile </a></p>
+  
+app/views/juans/show.html.erb:25:in `block in _app_views_juans_show_html_erb__395086040_40386600'
+app/views/juans/show.html.erb:21:in `_app_views_juans_show_html_erb__395086040_40386600'
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/Users/Public/Documents/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (409.0ms)
+Started GET "/juans/1" for ::1 at 2017-03-23 17:24:13 +0800
+Processing by JuansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJuan Load (1.0ms)[0m  [1m[34mSELECT  "juans".* FROM "juans" WHERE "juans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering juans/show.html.erb within layouts/application
+  [1m[36mFavor Load (0.0ms)[0m  [1m[34mSELECT "favors".* FROM "favors" WHERE (juan_id = 1)[0m
+  Rendered juans/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 14.8ms | ActiveRecord: 1.0ms)
+
+

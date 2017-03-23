@@ -1,4 +1,28 @@
+<div>
+	<table>
+	<td> Hi, <%= @juans.fname %> </td>
+	<td><a href="/login"> Logout </a></td>
+	</table>
+</div>
+
+<table>
+    <thead>
+        <th><a href="/juans">Available Runners</a></th>
+		<th><a href="/juans/">Ask a Favor</a></th>
+		<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
+		
+    </thead>
+</table>
+
 <p>Name: <%= @juans.fname %> <%= @juans.lname %></p>
-<p>Address: <%= @juans.address %></p>
-<p>Username: <%= @juans.username %></p>
-<p><%= @juans.password %></p>
+	<p>Address: <%= @juans.address %></p>
+	
+	<% @favor = Favor.where("juan_id = ?", @juans.id) %>
+	<% @favor.each do |f| %>
+	    	<% @count = 1 %>
+	    	<h4> Favor <%= @count %>: </h4>
+	        <p><%= f.desc %></p>
+			<p>Needed Skill: <%= f.skill_id %></p>
+	<% end %>
+
+	<p><a href="/juans/<%= @juans.id %>/edit"> Edit Profile </a></p>

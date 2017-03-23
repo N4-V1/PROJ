@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get '/juans' => 'juans#index'
   post '/juans' => 'juans#create'
   get '/juans/new' => 'juans#new'
-  #get '/juans/:id/edit' => 'juans#edit'
-  #patch '/juans' => 'juans#update'
+  get '/juans/:id/edit' => 'juans#edit'
+  patch '/juans/:id' => 'juans#update'
   get '/juans/:id' => 'juans#show'
   get '/juans/delete' => 'juans#delete'
   get '/juans/:id/ask' => 'favours#new'
@@ -19,9 +19,12 @@ Rails.application.routes.draw do
   #get '/runners/:id/edit' => 'runners#edit'
   #get '/runners/:id' => 'runners#show'
   get '/runners/:id/delete' => 'runners#delete'
-  resources :logins do
-  	resources :juans
-  	resources :favours
-  	resources :runners
-  end
+  
+  get '/favors/new' => "favors#new"
+  post '/juan' => 'favors#create'
+  #resources :logins do
+  #	resources :juans
+  #	resources :favours
+ #	resources :runners
+ # end
 end

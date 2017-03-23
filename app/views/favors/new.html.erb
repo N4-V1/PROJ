@@ -1,0 +1,28 @@
+<%= form_for(@favor, :url=>{:action => 'create'}) do |f| %>
+<div>
+	<table>
+	<td> Hi, <%= @juans.fname %> </td>
+	<td><a href="/login"> Logout </a></td>
+	</table>
+</div>
+
+<table>
+    <thead>
+        <th><a href="/juans">Available Runners</a></th>
+		<th><a href="/juans">Ask a Favor</a></th>
+		<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
+		
+    </thead>
+</table>
+
+<div>
+	<h3> Favor Description: </h3>
+	<%= f.text_area :desc %> <br> <br>
+
+	<p> Skill Required: <%= f.select :skill_id, [['Cleaning',1],['Cooking',2]] %> </p> <br> <br>
+
+   
+	<%= f.submit "Ask Favor" %>
+	</div>
+
+<% end %>

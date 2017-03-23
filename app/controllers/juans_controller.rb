@@ -32,11 +32,13 @@ def index
 end
 
 def edit
-
+	@juan = Juan.find(session[:id])
 end
 
 def update
-
+	@juan = Juan.find(session[:id])
+	@juan.update_attributes(params[:juan])
+	redirect_to "/juans/#{@juan.id}"
 end
 
 def delete
