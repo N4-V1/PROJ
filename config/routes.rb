@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   get '/runners' => 'runners#index'
   post '/runners' => 'runners#create'
   get '/runners/new' => 'runners#new'
-  #get '/runners/:id/edit' => 'runners#edit'
-  #get '/runners/:id' => 'runners#show'
+  get '/runners/:id/edit' => 'runners#edit'
+  patch '/runners/:id' => 'runners#update'
+  get '/runners/:id' => 'runners#show'
   get '/runners/:id/delete' => 'runners#delete'
   
   get '/favors/new' => "favors#new"

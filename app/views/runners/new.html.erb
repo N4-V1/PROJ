@@ -1,0 +1,33 @@
+<%= form_for(@runner, :url=>{:action => 'create'}) do |f| %>
+
+<% if @runner.errors.any? %>
+    <div id="error_explanation">
+        <h2>
+            <%= pluralize(@runner.errors.count, "error")%>
+            found: 
+        </h2>
+        <p>Oops! Registration unsuccessful </p>
+        <ul>
+        <% @juan.errors.full_messages.each do |message| %>
+            <li class="_error"><%= message %></li>
+        <% end %>
+        </ul>   
+    </div>
+<% end %>
+	
+    <div>
+	<h3> User Credentials: </h3>
+	<%= f.label :username %> <%= f.text_field :username %> <br> <br>
+    (Must be at least 8 characters) <br>
+	<%= f.label :password %> <%= f.password_field :password %> <br> <br>
+	
+	<h3> User Information: </h3>
+	<%= f.label :First_Name %> <%= f.text_field :fname %> <br><br>
+	<%= f.label :Last_Name %> <%= f.text_field :lname %> <br><br>
+	<%= f.label :address %> <%= f.text_field :address %> <br><br>
+    <%= f.label :contact %> <%= f.text_field :contact %> <br><br>
+    <%= f.label :skill %> <%= f.select :skill, [ 'General','Cleaning', 'Cooking', 'Gardening', 'Repairing', 'Electrical', 'Plumbing' ]%> </p> <br> <br>
+   
+	<%= f.submit "Register" %>
+	</div>
+<% end %>

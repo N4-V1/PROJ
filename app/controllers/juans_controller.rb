@@ -12,7 +12,7 @@ def create
 	@juan.username = params[:juan][:username]
 	@juan.password = params[:juan][:password]
 	@juan.contact = params[:juan][:contact]
-	
+
 	if @juan.save
 		redirect_to "/juans"
 	else
@@ -55,6 +55,6 @@ end
 def delete
 	@juan = Juan.find(params[:id])
 	@juan.destroy
-	redirect_to "/juans"
+	redirect_to "/login"
 end
 end

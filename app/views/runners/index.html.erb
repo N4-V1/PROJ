@@ -1,32 +1,26 @@
 <div>
 	<table>
-	<td> Hi, <%= @runners.fname %> </td>
 	<td><a href="/login"> Logout </a></td>
 	</table>
 </div>
 
 <table>
     <thead>
-        <th><a href="/juans">Available Runners</a></th>
-		<th><a href="/favors/new">Ask a Favor</a></th>
-		<td><a href="/juans/<%= @juans.id %>"> Profile </a> </td>
+        <th><a href="/runners">Available Favors</a></th>
+		<td><a href="/runners/<%= @runners.id %>"> Profile </a> </td>
 		
     </thead>
 
-	<tbody>
-	<thead>
-        <th>Name</th>
-		<th>Skill</th>
-		
-    </thead>
-
-<% @favor = Favor.where("skill = ?", @runners.skill) %>
-<% @runner.each do |run| %>
-    <tr>
-        <td><%= run.fname %> <%= run.lname %></td>
-		<td><%= run.skill %></td>
-		<td><a href="/runners/<%= run.id %>">Show</a></td>
-    </tr>
-<% end %>
-    </tbody>
 </table>
+<br>
+<% @favor = Favor.where("skill = ?", @runners.skill) %>
+<% @favor.each do |f| %>
+	<div>
+	<% @juan = Juan.find_by("id = ?", f.juan_id) %>
+        <a href="/juans/<%= @juan.id %>"><%= @juan.fname %> <%= @juan.lname %></a><br>
+		<%= f.desc %><br>
+		<a href="/runners/<%= f.id %>">Accept</a><br><br>
+
+	</div>
+<% end %>
+   
